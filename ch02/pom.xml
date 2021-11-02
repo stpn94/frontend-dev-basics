@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>ch02</artifactId>
 	<packaging>war</packaging>
-	
+
 	<build>
 		<finalName>ch02</finalName>
 	</build>
