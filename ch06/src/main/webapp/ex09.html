@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.addEventListener("load",function(){
+	const imgElement = document.createElement("img");
+	
+	// 표준 + 비표준 속성 하기위해서 setAttribute 메소드를 사용한다.
+	imgElement.setAttribute("src","https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjBfMTIz%2FMDAxNjI0MTc2NTE0OTU1.pZvVM0tiYRgtAlufPfVoie_JJS51a-W9wR1GEg7haxYg._cw30ipgEFHsS-RcoJQJIyYUFibanqg4H4fayI0_jmwg.JPEG.hneenh%2F%25BB%25E7%25C1%25F8_%252814%2529.jpg&type=a340")
+	imgElement.setAttribute("style","width:480px");
+	imgElement.setAttribute("alt","고양이");
+	imgElement.setAttribute("title","고양이");
+	imgElement.setAttribute("data-no", 10); // 비표준 속성
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+	}, 3000);
+});
+</script>
+</head>
+<body>
+	<h1></h1>
+</body>
+</html>
