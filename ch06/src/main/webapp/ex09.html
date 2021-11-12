@@ -4,23 +4,28 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-window.addEventListener("load",function(){
-	const imgElement = document.createElement("img");
+window.addEventListener("load", function() {
+	var imgElement = document.createElement("img");
 	
-	// 표준 + 비표준 속성 하기위해서 setAttribute 메소드를 사용한다.
-	imgElement.setAttribute("src","https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjBfMTIz%2FMDAxNjI0MTc2NTE0OTU1.pZvVM0tiYRgtAlufPfVoie_JJS51a-W9wR1GEg7haxYg._cw30ipgEFHsS-RcoJQJIyYUFibanqg4H4fayI0_jmwg.JPEG.hneenh%2F%25BB%25E7%25C1%25F8_%252814%2529.jpg&type=a340")
-	imgElement.setAttribute("style","width:480px");
-	imgElement.setAttribute("alt","고양이");
-	imgElement.setAttribute("title","고양이");
-	imgElement.setAttribute("data-no", 10); // 비표준 속성
+	// (표준(prop o) + 비표준(prop x)) 속성을 읽기/쓰기 위해서 setAttribute/getAttribute 를 사용한다.
+	imgElement.setAttribute('src', 'https://w.namu.la/s/6ec0825609d8987849dfb6894cc122e41c304ca1516947442d8e64a660a533813814af95f791c9ca029383628a897b3823d2ef6a2ee886cec2604c84a7b1981dc08ee6781476a7bd54e18ec20a635b27');
+	imgElement.setAttribute('style', 'width: 200px');
+	imgElement.setAttribute('alt', '루피~');
+	imgElement.setAttribute('title', '루피만세!!!!!!!');
+	imgElement['data-no'] = 20;              /* property */
+	imgElement.setAttribute('data-no', 10);  /* 비표준 속성(property x) */
 	
 	setTimeout(function(){
 		document.body.appendChild(imgElement);
+		console.log(imgElement['data-no']);
+		console.log(imgElement.getAttribute('data-no'));
 	}, 3000);
 });
 </script>
 </head>
 <body>
-	<h1></h1>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>3. HTML Element 속성 조작하기2</h2>
+
 </body>
 </html>

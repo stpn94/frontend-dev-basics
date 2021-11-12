@@ -24,40 +24,33 @@ var BrowserDetect = {
 			if (index == -1) return;
 			return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
 		},
-		dataBrowser: [
-			{
+		dataBrowser: [{
 				string: navigator.userAgent,
 				subString: "Chrome",
 				identity: "Chrome"
-			},
-			{
+			}, {
 				string: navigator.vendor,
 				subString: "Apple",
 				identity: "Safari",
 				versionSearch: "Version"
-			},
-			{
+			}, {
 				prop: window.opera,
 				identity: "Opera",
 				versionSearch: "Version"
-			},
-			{
+			}, {
 				string: navigator.userAgent,
 				subString: "Firefox",
 				identity: "Firefox"
-			},
-			{		// for newer Netscapes (6+)
+			}, {		// for newer Netscapes (6+)
 				string: navigator.userAgent,
 				subString: "Netscape",
 				identity: "Netscape"
-			},
-			{
+			}, {
 				string: navigator.userAgent,
 				subString: "MSIE",
 				identity: "Explorer",
 				versionSearch: "MSIE"
-			},
-			{
+			}, {
 				string: navigator.userAgent,
 				subString: "Gecko",
 				identity: "Mozilla",

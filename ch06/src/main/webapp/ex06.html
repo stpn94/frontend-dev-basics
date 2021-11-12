@@ -4,19 +4,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-window.addEventListener("load",function(){
-	const h1Element = document.createElement("h1");
-	const textNode = document.createTextNode('Hello DOM')
+window.addEventListener("load", function() {
+	var h3Element = document.createElement("h3");
+	var textNode = document.createTextNode("Hello DOM");
 	
-	h1Element.append(textNode);
+	h3Element.append(textNode);
 	
 	setTimeout(function(){
-		document.body.appendChild(h1Element);
+		document.body.appendChild(h3Element);
 	}, 3000);
 });
 </script>
 </head>
 <body>
-	<h1>HTML Element(DOM Tree Node) 추가하기</h1>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>2. HTML Element 추가1</h2>
 </body>
 </html>
