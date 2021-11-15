@@ -19,43 +19,44 @@ import com.douzone.ch08.vo.UserVo;
 @RestController
 @RequestMapping("/api/user")
 public class RestApiController {
-
+	
 	@PostMapping("")
-	public JsonResult create(@RequestBody UserVo vo) {
-		vo.setNo(10L);
+	public Object create(@RequestBody UserVo vo) {
+		vo.setNo(1L);
 		vo.setPassword("");
 		return JsonResult.success(vo);
 	}
-
+	
 	@GetMapping("")
-	public JsonResult read() {
+	public Object read() {
 		List<UserVo> list = new ArrayList<>();
 		return JsonResult.success(list);
 	}
-
+	
 	@GetMapping("/{no}")
-	public JsonResult read(@PathVariable("no") Long no) {
+	public Object read(@PathVariable("no") Long no) {
 		UserVo vo = new UserVo();
 		vo.setNo(no);
 		vo.setName("둘리");
 		vo.setEmail("dooly@gmail.com");
 		vo.setGender("male");
-
+		
 		return JsonResult.success(vo);
 	}
 
 	@PutMapping("/{no}")
-	public JsonResult update()
-			@PathVariable("no") Long no, 
-			@RequestBody UserVo vo) {
+	public Object update(
+		@PathVariable("no") Long no,
+		@RequestBody UserVo vo) {
 		vo.setNo(no);
+		vo.setPassword("");
 		return JsonResult.success(vo);
 	}
 
 	@DeleteMapping("/{no}")
-	public JsonResult delete(
-			@PathVariable("no") Long no, 
-			@RequestParam(value = "password", required = true, defaultValue = "") String password) {
+	public Object delete(
+		@PathVariable("no") Long no,
+		@RequestParam(value="password", required=true, defaultValue="") String password) {
 		System.out.println("password:" + password);
 		return JsonResult.success(no);
 	}
