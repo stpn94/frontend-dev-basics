@@ -1,29 +1,31 @@
-/* 
-    let: Block Scope의 변수
- */
-
-// let의 블락 범위
-try {
-  if (true) {
-    var i = 10;
-    let j = 20;
-  }
-  //밖에서 는 j 접근 못한다.
-  // i는 var (전역) 이기 때문에 가능하다.
-  console.log(i);
-  //  console.log(i,j);
-} catch (e) {
-  console.log(`error: ${e}`);
+const ex01 = function(param, callback){
+    // 비동기 코드
+    // ex) 파일시스템 접근, 네트워크 통신, SQL to DB, setTimeout
+    setTimeout(function(){
+        if(param == 'param-data') {
+            callback(null, 'ok');
+        } else {
+            callback(new Error('fail'));
+        }
+    }, 2000);
 }
 
-// cf: var 함수 범위
-try {
-  let f = function () {
-    // var m = 20;
-    let m = 20;
-  };
-  f();
-  console.log(m);
-} catch (e) {
-  console.error(`error: ${e}`);
-}
+// test01
+ex01("param-data", function(err, res){
+    if(err){
+        console.error(err);
+    } else {
+        console.log(res);
+    }
+});
+
+// test02
+ex01("param-error", function(err, res){
+    if(err){
+        console.error(err.message);
+    } else {
+        console.log(res);
+    }
+});
+
+console.log("waits....");

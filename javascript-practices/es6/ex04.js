@@ -1,9 +1,10 @@
-/* 4. default parameter */
+/**
+ * default parameter
+ */
 
-//매게변수가 1개변 strs \n 이 자동으로 들어간다.
-const print = function (strs, end = `\n`) {
-  console.log(strs.join(end));
-};
+const print = function(strs,e='\n'){
+    console.log(strs.join(e));
+}
 
-print(["Always", "with", "me"]);
-print(["Always", "with", "me"], " ");
+print(['Alwyas', 'with','me']);
+print(['Alwyas', 'with','me'],' ');
